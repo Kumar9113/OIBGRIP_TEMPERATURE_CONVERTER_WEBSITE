@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Temperature Converter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=devise-width,intial-scale=1">
+    <link rel="stylesheet" href="temp.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" </head>
+
+    <body>
+        <section class="main">
+            <div class="center">
+                <h1>Farenheit</h1>
+                <form method="post" id="farenheit form" class="form">
+                    <div class="txt_feild">
+                        <span></span>
+                        <label><strong>Farenheit reading:</strong></label><br>
+                        <input type="number" required name="farenheit" id="farenheit">
+                    </div>
+                    <div class="txt_feild">
+                        <span></span>
+                        <label><strong>Celcius reading:</strong></label><br>
+                        <input type="number" name="celcius" id="celciusr">
+                    </div>
+                    <input type="button" value="Evaluvate" onclick="convert1()">
+                </form>
+            </div>
+            <div class="center">
+                <h1>Celcius</h1>
+                <form id="celcius form" class="form">
+                    <div class="txt_feild">
+                        <label><strong>Celcius reading:</strong></label><br>
+                        <input type="number" required name="celcius" id="celcius">
+                        <span></span>
+                    </div>
+                    <div class="txt_feild">
+                        <label><strong>Farenheit reading:</strong></label><br>
+                        <input type="number" name="farenheit" id="farenheitr">
+                        <span></span>
+                    </div>
+                    <input type="button" value="Evaluvate" onclick="convert2()">
+                </form>
+            </div>
+        </section>
+    </body>
+    <script>
+        let inf, otf;
+
+        function convert1() {
+            inf = document.getElementById("farenheit");
+            otf = document.getElementById("celciusr");
+            otf.value = eval((inf.value - 32) * 5 / 9);
+        }
+
+        function convert2() {
+            inf = document.getElementById("celcius");
+            otf = document.getElementById("farenheitr");
+            otf.value = eval((inf.value * 9 / 5) + 32);
+        }
+    </script>
+
+</html>
